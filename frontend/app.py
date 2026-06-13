@@ -1,100 +1,225 @@
 import streamlit as st
 import requests
 
+# ---------------------------
+# Page Configuration
+# ---------------------------
+
 st.set_page_config(
-    page_title="AI Welfare Scheme Assistant",
+    page_title="Bharat Welfare Assistant",
     page_icon="🏛️",
     layout="wide"
 )
 
+# ---------------------------
+# Session State
+# ---------------------------
+
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+# ---------------------------
+# Header
+# ---------------------------
+
 st.title("🏛️ Bharat Welfare Assistant")
 
-st.markdown(
-    """
-    Find government schemes you are eligible for and
-    get AI-powered guidance in English and Hindi.
-    """
-)
+st.markdown("""
+Find government welfare schemes you are eligible for and get AI-powered guidance in multiple Indian languages.
+""")
+
+# ---------------------------
+# Language Selection
+# ---------------------------
 
 language = st.selectbox(
     "Language",
-    ["English", "Hindi"]
-)
-
-st.header("Check Your Eligibility")
-
-age = st.number_input(
-    "Age",
-    min_value=0,
-    max_value=100
-)
-
-gender = st.selectbox(
-    "Gender",
-    ["Male", "Female"]
-)
-
-occupation = st.selectbox(
-    "Occupation",
     [
-    "Farmer",
-    "Worker",
-    "Street Vendor",
-    "Student",
-    "Self Employed",
-    "Unemployed"
-]
+        "English",
+        "Hindi",
+        "Tamil"
+    ]
 )
 
-income = st.number_input(
-    "Annual Income",
-    min_value=0
+st.divider()
+
+# ---------------------------
+# Eligibility Checker
+# ---------------------------
+
+st.header("📋 Check Your Eligibility")
+
+col1, col2 = st.columns(2)
+
+with col1:
+
+    age = st.number_input(
+        "Age",
+        min_value=0,
+        max_value=100
+    )
+
+    gender = st.selectbox(
+        "Gender",
+        [
+            "Male",
+            "Female"
+        ]
+    )
+
+    state = st.selectbox(
+        "State",
+        [
+            "Uttar Pradesh",
+            "Maharashtra",
+            "Delhi",
+            "Tamil Nadu",
+            "Karnataka",
+            "West Bengal",
+            "Other"
+        ]
+    )
+
+with col2:
+
+    occupation = st.selectbox(
+        "Occupation",
+        [
+            "Farmer",
+            "Worker",
+            "Vendor",
+            "Student",
+            "Self Employed",
+            "Unemployed"
+        ]
+    )
+
+    income = st.number_input(
+        "Annual Income",
+        min_value=0
+    )
+
+    category = st.selectbox(
+        "Category",
+        [
+            "General",
+            "OBC",
+            "SC",
+            "ST"
+        ]
+    )
+
+area = st.selectbox(
+    "Area",
+    [
+        "Urban",
+        "Rural"
+    ]
 )
 
-if st.button("Find Schemes"):
+# ---------------------------
+# Find Schemes
+# ---------------------------
+
+if st.button("🔍 Find Schemes"):
 
     payload = {
         "age": age,
         "gender": gender,
         "occupation": occupation,
-        "income": income
+        "income": income,
+        "state": state,
+        "category": category,
+        "area": area
     }
 
-    response = requests.post(
-        "http://127.0.0.1:8000/check-eligibility",
-        json=payload
-    )
+    try:
 
-    if response.status_code == 200:
+        response = requests.post(
+            "http://127.0.0.1:8000/check-eligibility",
+            json=payload
+        )
 
-        data = response.json()
+        if response.status_code == 200:
 
-        st.subheader("Recommended Schemes")
+            data = response.json()
 
-        for scheme in data["eligible_schemes"]:
+            st.subheader("🎯 Recommended Schemes")
 
-            with st.expander(scheme["name"]):
+            if len(data["eligible_schemes"]) == 0:
+                st.warning(
+                    "No matching schemes found."
+                )
 
-                st.write("### Benefit")
-                st.write(scheme["benefit"])
+            for scheme in data["eligible_schemes"]:
 
-                st.write("### Description")
-                st.write(scheme["description"])
+                with st.expander(
+                    scheme["name"]
+                ):
 
-                st.write("### Required Documents")
+                    if "match_score" in scheme:
 
-                for doc in scheme["documents"]:
-                    st.write(f"✅ {doc}")
+                        st.progress(
+                            scheme["match_score"] / 100
+                        )
 
-                st.write("### Application Process")
+                        st.write(
+                            f"Match Score: {scheme['match_score']}%"
+                        )
 
-                for step in scheme["application_process"]:
-                    st.write(f"➡️ {step}")
+                    st.write("### 💰 Benefit")
+                    st.write(
+                        scheme.get(
+                            "benefit",
+                            "Not Available"
+                        )
+                    )
 
-    else:
-        st.error("Could not fetch scheme recommendations.")
+                    st.write("### 📖 Description")
+                    st.write(
+                        scheme.get(
+                            "description",
+                            "Not Available"
+                        )
+                    )
+
+                    st.write("### 📄 Required Documents")
+
+                    for doc in scheme.get(
+                        "documents",
+                        []
+                    ):
+                        st.write(
+                            f"✅ {doc}"
+                        )
+
+                    st.write(
+                        "### 🚀 Application Process"
+                    )
+
+                    for step in scheme.get(
+                        "application_process",
+                        []
+                    ):
+                        st.write(
+                            f"➡️ {step}"
+                        )
+
+        else:
+            st.error(
+                f"Backend Error: {response.status_code}"
+            )
+
+    except Exception as e:
+        st.error(
+            f"Error connecting to backend: {e}"
+        )
 
 st.divider()
+
+# ---------------------------
+# AI Assistant
+# ---------------------------
 
 st.header("🤖 AI Welfare Assistant")
 
@@ -105,27 +230,75 @@ question = st.text_input(
 if st.button("Ask AI"):
 
     if question.strip() == "":
-        st.warning("Please enter a question.")
+        st.warning(
+            "Please enter a question."
+        )
 
     else:
 
-        response = requests.post(
-            "http://127.0.0.1:8000/chat",
-            json={
-                "question": question,
-                "language": language
-            }
-        )
+        try:
 
-        if response.status_code == 200:
+            response = requests.post(
+                "http://127.0.0.1:8000/chat",
+                json={
+                    "question": question,
+                    "language": language
+                }
+            )
 
-            data = response.json()
+            if response.status_code == 200:
 
-            st.subheader("AI Response")
-            st.write(data["answer"])
+                data = response.json()
+
+                st.session_state.messages.append(
+                    ("You", question)
+                )
+
+                st.session_state.messages.append(
+                    (
+                        "Assistant",
+                        data["answer"]
+                    )
+                )
+
+                st.subheader(
+                    "🤖 AI Response"
+                )
+
+                st.write(
+                    data["answer"]
+                )
+
+            else:
+                st.error(
+                    f"Backend Error: {response.status_code}"
+                )
+
+        except Exception as e:
+            st.error(
+                f"Error connecting to backend: {e}"
+            )
+
+st.divider()
+
+# ---------------------------
+# Chat History
+# ---------------------------
+
+if len(st.session_state.messages) > 0:
+
+    st.header("💬 Chat History")
+
+    for role, message in st.session_state.messages:
+
+        if role == "You":
+
+            st.info(
+                f"You: {message}"
+            )
 
         else:
-            st.error("Failed to get response from AI.")
 
-if "messages" not in st.session_state:
-    st.session_state.messages = []
+            st.success(
+                f"Assistant: {message}"
+            )
