@@ -6,7 +6,8 @@ import google.generativeai as genai
 from rag.retriever import retrieve
 from translator import (
     translate_to_english,
-    translate_to_hindi
+    translate_to_hindi,
+    translate_to_tamil
 )
 
 # Load environment variables
@@ -55,5 +56,7 @@ Question:
         answer = translate_to_hindi(
             answer
         )
+    elif language == "Tamil":
+        answer = translate_to_tamil(answer)
 
     return answer

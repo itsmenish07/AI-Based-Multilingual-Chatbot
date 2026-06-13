@@ -1,4 +1,5 @@
 import json
+from scoring import calculate_score
 
 
 def load_schemes():
@@ -24,6 +25,10 @@ def check_eligibility(user):
         income_match = (
             user["income"]
             <= scheme["income_max"]
+        )
+        scheme["match_score"] = calculate_score(
+            user,
+            scheme
         )
 
         if occupation_match and income_match:

@@ -12,6 +12,9 @@ class UserInput(BaseModel):
     gender: str
     occupation: str
     income: int
+    state: str
+    category: str
+    area: str
 
 
 class ChatRequest(BaseModel):

@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+.env
+
+backend/rag/chunks.pkl
+backend/rag/scheme_index.faiss
+
+.streamlit/
