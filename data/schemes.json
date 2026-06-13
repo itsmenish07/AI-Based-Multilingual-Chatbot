@@ -1,0 +1,182 @@
+[
+    {
+      "name": "PM Kisan",
+      "occupation": "Farmer",
+      "income_max": 500000,
+      "benefit": "₹6000 per year",
+      "description": "PM-KISAN provides income support of ₹6000 per year to eligible farmer families in three equal installments.",
+      "application_process": [
+        "Visit PM Kisan portal",
+        "Register as farmer",
+        "Upload Aadhaar and land records",
+        "Submit application"
+      ],
+      "documents": [
+        "Aadhaar Card",
+        "Bank Passbook",
+        "Land Records"
+      ]
+    },
+
+    {
+    "name": "Ayushman Bharat",
+    "occupation": "Any",
+    "income_max": 250000,
+    "benefit": "₹5 Lakh Health Insurance Coverage",
+    "description": "Ayushman Bharat provides health insurance coverage of up to ₹5 lakh per family per year for secondary and tertiary healthcare.",
+    "application_process": [
+    "Check eligibility on Ayushman Bharat portal",
+    "Verify Aadhaar details",
+    "Complete beneficiary registration",
+    "Download Ayushman Card"
+    ],
+    "documents": [
+    "Aadhaar Card",
+    "Ration Card",
+    "Mobile Number"
+    ]
+    },
+    {
+    "name": "PMAY",
+    "occupation": "Any",
+    "income_max": 300000,
+    "benefit": "Housing Assistance",
+    "description": "Pradhan Mantri Awas Yojana provides financial assistance for construction or purchase of affordable housing.",
+    "application_process": [
+    "Visit PMAY portal",
+    "Fill application form",
+    "Upload required documents",
+    "Submit for verification"
+    ],
+    "documents": [
+    "Aadhaar Card",
+    "Income Certificate",
+    "Address Proof"
+    ]
+    },
+    {
+    "name": "Ujjwala Yojana",
+    "occupation": "Any",
+    "income_max": 300000,
+    "benefit": "Free LPG Connection",
+    "description": "Pradhan Mantri Ujjwala Yojana provides LPG connections to women from economically weaker households.",
+    "application_process": [
+    "Visit nearest LPG distributor",
+    "Submit application form",
+    "Provide identity documents",
+    "Receive LPG connection approval"
+    ],
+    "documents": [
+    "Aadhaar Card",
+    "Ration Card",
+    "Bank Account Details"
+    ]
+    },
+    {
+    "name": "MGNREGA",
+    "occupation": "Worker",
+    "income_max": 500000,
+    "benefit": "100 Days Wage Employment",
+    "description": "MGNREGA guarantees up to 100 days of wage employment in a financial year to rural households.",
+    "application_process": [
+    "Apply for Job Card",
+    "Register at Gram Panchayat",
+    "Request employment",
+    "Participate in approved work"
+    ],
+    "documents": [
+    "Job Card",
+    "Aadhaar Card",
+    "Bank Passbook"
+    ]
+    },
+    {
+    "name": "Sukanya Samriddhi Yojana",
+    "occupation": "Any",
+    "income_max": 1000000,
+    "benefit": "Girl Child Savings Scheme",
+    "description": "Sukanya Samriddhi Yojana encourages long-term savings for the education and marriage of a girl child.",
+    "application_process": [
+    "Visit bank or post office",
+    "Open Sukanya account",
+    "Submit required documents",
+    "Make initial deposit"
+    ],
+    "documents": [
+    "Birth Certificate",
+    "Aadhaar Card",
+    "Parent Identity Proof"
+    ]
+    },
+    {
+    "name": "Jan Dhan Yojana",
+    "occupation": "Any",
+    "income_max": 10000000,
+    "benefit": "Zero Balance Bank Account",
+    "description": "Pradhan Mantri Jan Dhan Yojana promotes financial inclusion through zero-balance bank accounts.",
+    "application_process": [
+    "Visit participating bank",
+    "Fill account opening form",
+    "Submit identity proof",
+    "Activate account"
+    ],
+    "documents": [
+    "Aadhaar Card",
+    "PAN Card or Alternative ID"
+    ]
+    },
+    {
+    "name": "PM SVANidhi",
+    "occupation": "Vendor",
+    "income_max": 500000,
+    "benefit": "Collateral-Free Working Capital Loan",
+    "description": "PM SVANidhi provides affordable working capital loans to street vendors.",
+    "application_process": [
+    "Register as street vendor",
+    "Submit loan application",
+    "Verify vendor certificate",
+    "Receive loan approval"
+    ],
+    "documents": [
+    "Vendor Certificate",
+    "Aadhaar Card",
+    "Bank Account Details"
+    ]
+    },
+    {
+    "name": "e-Shram",
+    "occupation": "Worker",
+    "income_max": 10000000,
+    "benefit": "Social Security Benefits",
+    "description": "e-Shram creates a national database of unorganized workers and provides access to welfare benefits.",
+    "application_process": [
+    "Register on e-Shram portal",
+    "Verify Aadhaar",
+    "Complete worker profile",
+    "Generate e-Shram card"
+    ],
+    "documents": [
+    "Aadhaar Card",
+    "Mobile Number",
+    "Bank Account Details"
+    ]
+    },
+    {
+    "name": "Atal Pension Yojana",
+    "occupation": "Any",
+    "income_max": 10000000,
+    "benefit": "Guaranteed Monthly Pension",
+    "description": "Atal Pension Yojana provides a guaranteed pension after retirement based on regular contributions.",
+    "application_process": [
+    "Visit bank branch",
+    "Enroll in APY",
+    "Choose pension amount",
+    "Enable auto-debit contributions"
+    ],
+    "documents": [
+    "Aadhaar Card",
+    "Bank Account",
+    "Mobile Number"
+    ]
+    }
+]

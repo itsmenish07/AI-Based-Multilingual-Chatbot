@@ -1,0 +1,161 @@
+PM Kisan
+
+Description:
+PM-KISAN provides income support of ₹6000 per year to eligible farmer families.
+
+Eligibility:
+Farmers.
+
+Documents:
+Aadhaar Card
+Bank Passbook
+Land Records
+
+Benefits:
+₹6000 per year
+
+---
+
+Ayushman Bharat
+
+Description:
+Provides health insurance coverage of up to ₹5 lakh per family.
+
+Eligibility:
+Low-income families.
+
+Documents:
+Aadhaar Card
+Ration Card
+Mobile Number
+
+Benefits:
+₹5 Lakh Health Insurance
+
+---
+
+PMAY
+
+Description:
+Provides financial assistance for affordable housing.
+
+Eligibility:
+Economically weaker households.
+
+Documents:
+Aadhaar Card
+Income Certificate
+Address Proof
+
+Benefits:
+Housing Assistance
+
+---
+
+Ujjwala Yojana
+
+Description:
+Provides free LPG connections to eligible households.
+
+Eligibility:
+Low-income households.
+
+Documents:
+Aadhaar Card
+Ration Card
+Bank Account Details
+
+Benefits:
+Free LPG Connection
+
+---
+
+MGNREGA
+
+Description:
+Provides up to 100 days of wage employment annually.
+
+Eligibility:
+Rural workers.
+
+Documents:
+Job Card
+Aadhaar Card
+Bank Passbook
+
+Benefits:
+100 Days Wage Employment
+
+---
+
+Sukanya Samriddhi Yojana
+
+Description:
+Savings scheme for girl child education and marriage.
+
+Documents:
+Birth Certificate
+Aadhaar Card
+Parent Identity Proof
+
+Benefits:
+Girl Child Savings Scheme
+
+---
+
+Jan Dhan Yojana
+
+Description:
+Provides zero-balance bank accounts for financial inclusion.
+
+Documents:
+Aadhaar Card
+PAN Card
+
+Benefits:
+Zero Balance Bank Account
+
+---
+
+PM SVANidhi
+
+Description:
+Provides working capital loans to street vendors.
+
+Documents:
+Vendor Certificate
+Aadhaar Card
+Bank Account Details
+
+Benefits:
+Collateral-Free Working Capital Loan
+
+---
+
+e-Shram
+
+Description:
+Creates a national database of unorganized workers.
+
+Documents:
+Aadhaar Card
+Mobile Number
+Bank Account Details
+
+Benefits:
+Social Security Benefits
+
+---
+
+Atal Pension Yojana
+
+Description:
+Provides guaranteed pension after retirement.
+
+Documents:
+Aadhaar Card
+Bank Account
+Mobile Number
+
+Benefits:
+Guaranteed Monthly Pension

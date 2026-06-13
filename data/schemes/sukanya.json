@@ -1,0 +1,15 @@
+{
+  "name": "PM Kisan",
+  "category": "Farmer",
+  "description": "Provides income support to farmers.",
+  "benefit": "₹6000 per year",
+  "eligibility": {
+    "occupation": "Farmer",
+    "income_max": 500000
+  },
+  "documents": [
+    "Aadhaar Card",
+    "Bank Passbook",
+    "Land Records"
+  ]
+}
