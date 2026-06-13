@@ -447,6 +447,7 @@ The project aims to:
 # 👨‍💻 Developed By
 
 Ujjwal Mishra
+Naisha Rajput
 
 AI-Based Multilingual Welfare Scheme Assistant
 
